@@ -25,8 +25,8 @@ def write_word_map(map, filename):
         filename = str(count) + "_" + filename[2:]
         count += 1
 
-    # for word in tqdm(map, desc="Writing updated model to disk..."):
-    for word in tqdm({"dummy": "data"}, desc="Writing updated model to disk..."):
+    for word in tqdm(map, desc="Writing updated model to disk..."):
+    # for word in tqdm({"dummy": "data"}, desc="Writing updated model to disk..."):
         with open(filename, 'a') as f:
             e = ' '.join([str(num) for num in map[word]])
             f.write(word + ' ' + e + '\n')
